@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo Completo — Ciências 💯</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background: linear-gradient(135deg, #0f172a, #1e40af, #0891b2); min-height: 100vh; color: #fff; }
+        .container { max-width: 950px; margin: 0 auto; padding: 25px; }
+        
+        .tela-inicial { text-align: center; padding-top: 80px; }
+        h1 { font-size: 2.2rem; margin-bottom: 15px; }
+        .subtitulo { font-size: 1.1rem; margin-bottom: 50px; opacity: 0.9; }
+        .botoes { display: flex; flex-direction: column; gap: 25px; align-items: center; }
+        .btn { 
+            padding: 20px 40px; font-size: 1.2rem; border: none; border-radius: 15px; 
+            cursor: pointer; transition: all 0.3s; font-weight: bold; width: 300px;
+        }
+        .btn-estudo { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .btn-estudo:active { transform: scale(0.97); }
+        .btn-simulado { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .btn-simulado:active { transform: scale(0.97); }
+        .voltar { 
+            background: rgba(255,255,255,0.2); color: white; padding: 10px 20px; 
+            border: none; border-radius: 10px; cursor: pointer; margin-bottom: 20px;
+        }
+        .aviso-faltando { 
+            background: rgba(251,146,60,0.9); color: #000; padding: 15px; border-radius: 10px; 
+            margin-bottom: 20px; font-weight: bold; display: none;
+        }
+        .pagina { display: none; }
+        .ativa { display: block; }
+        h2 { font-size: 1.8rem; margin-bottom: 25px; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px; }
+        .secao { background: rgba(255,255,255,0.1); padding: 25px; border-radius: 12px; margin-bottom: 25px; }
+        h3 { font-size: 1.3rem; margin: 20px 0 10px; color: #fcd34d; }
+        h4 { font-size: 1.1rem; margin: 15px 0 8px; color: #fef3c7; }
+        p, li { line-height: 1.8; margin-bottom: 10px; text-align: justify; }
+        ul, ol { padding-left: 25px; margin-bottom: 15px; }
+        .destaque { background: rgba(252,211,77,0.2); padding: 15px; border-radius: 8px; border-left: 4px solid #fcd34d; margin: 15px 0; }
+        .ilustracao { 
+            background: rgba(255,255,255,0.15); padding: 15px; border-radius: 10px; margin: 15px 0; 
+            text-align: center; font-size: 1rem; color: #fef3c7;
+        }
+        hr { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0; }
+        
+        /* Simulado */
+        .questao { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .alternativa { display: block; padding: 10px; margin: 8px 0; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; }
+        .alternativa:hover { background: rgba(255,255,255,0.2); }
+        .alternativa input { margin-right: 10px; }
+        .resposta-escrita { width: 100%; padding: 12px; border-radius: 6px; border: none; background: rgba(255,255,255,0.95); color: #111; margin-top: 8px; min-height: 80px; font-size: 1rem; }
+        .enviar { background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 15px 30px; font-size: 1.1rem; border: none; border-radius: 10px; cursor: pointer; width: 100%; margin-top: 10px; font-weight: bold; }
+        .enviar:disabled { background: #555; cursor: not-allowed; opacity: 0.6; }
+        .resultado { margin-top: 25px; padding: 20px; border-radius: 12px; background: rgba(255,255,255,0.15); display: none; }
+        .correto { color: #4ade80; font-weight: bold; }
+        .errado { color: #f87171; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<!-- TELA INICIAL -->
+<div id="inicial" class="tela-inicial pagina ativa">
+    <h1>📚 Estudo Completo de Ciências</h1>
+    <p class="subtitulo">Material Detalhado + Simulado — Tudo Completo pra Tirar 10 💯</p>
+    <div class="botoes">
+        <button class="btn btn-estudo" onclick="abrir('estudo')">📖 Material de Estudo Completo</button>
+        <button class="btn btn-simulado" onclick="abrir('simulado')">✍️ Fazer Simulado</button>
+    </div>
+</div>
+
+<!-- PÁGINA DE ESTUDO -->
+<div id="estudo" class="pagina">
+    <button class="voltar" onclick="abrir('inicial')">← Voltar ao Início</button>
+    <h2>📖 Material de Estudo Completo e Detalhado</h2>
+
+    <div class="secao">
+        <h3>1. SISTEMA IMUNOLÓGICO — O EXÉRCITO DE DEFESA DO CORPO</h3>
+        
+        <p>O sistema imunológico é um conjunto de órgãos, tecidos, células e substâncias que trabalham juntos para proteger o nosso corpo contra seres que podem nos causar doenças. Ele funciona como um sistema de segurança: vigia tudo o que entra, reconhece o que é nosso e o que é estranho, e ataca rapidamente.</p>
+
+        <div class="ilustracao">
+            🛡️ Corpo detecta estranho → ataca → elimina → fica protegido ✅
+        </div>
+
+        <h4>1.1 — Quem são os invasores?</h4>
+        <p>Vários tipos de seres podem invadir nosso organismo:</p>
+        <ul>
+            <li><strong>Vírus:</strong> Muito pequenos, vivem dentro de células. Exemplos: gripe, hepatite.</li>
+            <li><strong>Bactérias:</strong> Seres unicelulares. Algumas úteis, outras causam doenças como cólera e pneumonia.</li>
+            <li><strong>Fungos:</strong> Causam infecções na pele, unhas e órgãos.</li>
+            <li><strong>Parasitas:</strong> Se instalam no corpo e causam doenças.</li>
+            <li><strong>Toxinas:</strong> Substâncias venenosas que prejudicam o corpo.</li>
+        </ul>
+
+        <h4>1.2 — Antígeno e Resposta Imune</h4>
+        <p>O <strong>antígeno</strong> é qualquer substância reconhecida como estranha. Ele dispara a <strong>resposta imune</strong> — a reação do corpo para se defender.</p>
+
+        <h4>1.3 — Resposta Imune Inata — Já nascemos com ela</h4>
+        <p>É a primeira linha de defesa, age imediata, sem precisar aprender. Funciona por barreiras e por células:</p>
+        
+        <div class="destaque">
+        <strong>Barreiras Físicas:</strong><br>
+        • Pele → bloqueia entrada<br>
+        • Pelos e muco → retêm sujeira<br>
+        • Revestimentos internos → protegem boca, estômago, intestino
+        </div>
+
+        <div class="destaque">
+        <strong>Barreiras Químicas:</strong><br>
+        • Lágrima e saliva → destroem bactérias<br>
+        • Suor → deixa pele ácida<br>
+        • Suco gástrico → mata micróbios no estômago
+        </div>
+
+        <h4>1.4 — Células da Imunidade Inata</h4>
+        <p><strong>Macrófagos e Neutrófilos:</strong> engolem e destroem invasores → processo chamado <strong>fagocitose</strong>.</p>
+        <p><strong>Células NK:</strong> destroem células infectadas e tumores.</p>
+        <p><strong>Inflamação:</strong> vermelhidão, calor, inchaço e dor → sinal que o corpo está lutando.</p>
+
+        <hr>
+
+        <h4>1.5 — Resposta Imune Adquirida — Aprendemos com o tempo</h4>
+        <p>Se forma ao longo da vida. É mais lenta na primeira vez, mas <strong>guarda memória</strong> — se a doença voltar, defende muito mais rápido!</p>
+        
+        <div class="destaque">
+        <strong>Linfócito T:</strong> destrói células já infectadas.<br>
+        <strong>Linfócito B:</strong> produz <strong>anticorpos</strong> que marcam os invasores para eliminação.<br>
+        <strong>Anticorpos:</strong> proteínas que se ligam ao antígeno, facilitando a destruição.<br>
+        <strong>Memória:</strong> células ficam de vigia para proteger no futuro — é assim que as vacinas funcionam!
+        </div>
+    </div>
+
+    <div class="secao">
+        <h3>2. DOENÇAS TRANSMITIDAS POR VETORES</h3>
+        
+        <p><strong>Vetores:</strong> insetos que transportam doenças de uma pessoa para outra.</p>
+        
+        <div class="ilustracao">
+            🦟 Mosquito pica doente → pica saudável → transmite a doença
+        </div>
+
+        <h4>A Malária</h4>
+        <p><strong>Causador:</strong> protozoário <em>Plasmodium</em><br>
+        <strong>Transmissor:</strong> mosquito <em>Anopheles</em><br>
+        <strong>Sintomas:</strong> febre alta, calafrios, suor, dor de cabeça, cansaço<br>
+        <strong>Prevenção:</strong> mosquiteiro, repelente, eliminar água parada, procurar médico rápido</p>
+    </div>
+
+    <div class="secao">
+        <h3>3. SANEAMENTO BÁSICO</h3>
+        
+        <h4>ETA — Estação de Tratamento de Água</h4>
+        <p>Água do rio → filtração → cloração → própria para beber. Sem isso, a água traz doenças.</p>
+
+        <h4>ETE — Estação de Tratamento de Esgoto</h4>
+        <p>Água suja é limpa antes de voltar ao rio. Evita poluição e contaminação.</p>
+
+        <h4>Coleta de Lixo</h4>
+        <p>Resíduos recolhidos e destinados corretamente. Lixo acumulado atrai ratos, baratas e insetos transmissores de doença.</p>
+    </div>
+
+    <div class="secao">
+        <h3>4. DOENÇAS POR SANEAMENTO RUIM — VIA FECO-ORAL</h3>
+        
+        <div class="ilustracao">
+            💩 Fezes contaminam água/alimento → pessoa ingere → fica doente 🤒
+        </div>
+
+        <p>Exemplos: diarreia, hepatite A, cólera, giardíase.</p>
+        
+        <p><strong>Como evitar:</strong></p>
+        <ul>
+            <li>Lavar bem as mãos, principalmente antes de comer e depois de usar o banheiro</li>
+            <li>Beber só água tratada ou fervida</li>
+            <li>Cozinhar bem os alimentos</li>
+            <li>Lavar bem frutas e verduras</li>
+            <li>Não deixar água parada</li>
+        </ul>
+    </div>
+
+    <div class="secao">
+        <h3>5. POLÍTICAS PÚBLICAS DE SAÚDE</h3>
+        
+        <div class="destaque">
+        <strong>SUS — Sistema Único de Saúde</strong><br>
+        • Criado em 1990<br>
+        • Gratuito para TODOS<br>
+        • Atende em postos, hospitais, faz vacinação, exames, internações<br>
+        • Princípios: Universalidade, Igualdade, Integralidade
+        </div>
+
+        <p><strong>PASC — Agentes Comunitários de Saúde:</strong> visitam residências, orientam famílias, acompanham saúde, coletam dados, fazem prevenção.</p>
+        
+        <p><strong>Campanhas de Vacinação:</strong> protegem contra sarampo, rubéola, poliomielite, tétano, gripe, hepatite e mais de 20 doenças — tudo gratuito no SUS.</p>
+        
+        <p><strong>Política da Criança:</strong> acompanhamento do crescimento, alimentação, vacinação — reduz mortalidade infantil.</p>
+    </div>
+</div>
+
+<!-- SIMULADO -->
+<div id="simulado" class="pagina">
+    <button class="voltar" onclick="abrir('inicial')">← Voltar ao Início</button>
+    <h2>✍️ Simulado de Ciências</h2>
+    
+    <div id="avisoFaltando" class="aviso-faltando">
+        ⚠️ Você precisa responder TODAS as questões antes de finalizar!
+    </div>
+
+    <form id="formSimulado">
+        <h3>Parte 1 — Múltipla Escolha</h3>
+        
+        <div class="questao">
+            <p><strong>1. O que é um antígeno?</strong></p>
+            <label class="alternativa"><input type="radio" name="q1" value="a"> a) Célula de defesa do corpo</label>
+            <label class="alternativa"><input type="radio" name="q1" value="b"> b) Substância estranha que provoca resposta imune</label>
+            <label class="alternativa"><input type="radio" name="q1" value="c"> c) Tipo de bactéria benéfica</label>
+            <label class="alternativa"><input type="radio" name="q1" value="d"> d) Medicamento contra infecções</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>2. Qual NÃO faz parte das barreiras naturais de defesa?</strong></p>
+            <label class="alternativa"><input type="radio" name="q2" value="a"> a) Pele</label>
+            <label class="alternativa"><input type="radio" name="q2" value="b"> b) Lágrima</label>
+            <label class="alternativa"><input type="radio" name="q2" value="c"> c) Vacina</label>
+            <label class="alternativa"><input type="radio" name="q2" value="d"> d) Muco do nariz</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>3. Quem produz anticorpos no corpo?</strong></p>
+            <label class="alternativa"><input type="radio" name="q3" value="a"> a) Linfócito B</label>
+            <label class="alternativa"><input type="radio" name="q3" value="b"> b) Linfócito T</label>
+            <label class="alternativa"><input type="radio" name="q3" value="c"> c) Macrófago</label>
+            <label class="alternativa"><input type="radio" name="q3" value="d"> d) Célula NK</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>4. A resposta imune que nascemos com ela é chamada de:</strong></p>
+            <label class="alternativa"><input type="radio" name="q4" value="a"> a) Adquirida</label>
+            <label class="alternativa"><input type="radio" name="q4" value="b"> b) Inata / Natural</label>
+            <label class="alternativa"><input type="radio" name="q4" value="c"> c) Adaptativa</label>
+            <label class="alternativa"><input type="radio" name="q4" value="d"> d) Artificial</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>5. A malária é transmitida por qual vetor?</strong></p>
+            <label class="alternativa"><input type="radio" name="q5" value="a"> a) Mosquito Aedes aegypti</label>
+            <label class="alternativa"><input type="radio" name="q5" value="b"> b) Mosquito Anopheles</label>
+            <label class="alternativa"><input type="radio" name="q5" value="c"> c) Barata</label>
+            <label class="alternativa"><input type="radio" name="q5" value="d"> d) Carrapato</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>6. Qual serviço trata a água suja antes de devolver ao meio ambiente?</strong></p>
+            <label class="alternativa"><input type="radio" name="q6" value="a"> a) ETA</label>
+            <label class="alternativa"><input type="radio" name="q6" value="b"> b) ETE</label>
+            <label class="alternativa"><input type="radio" name="q6" value="c"> c) SUS</label>
+            <label class="alternativa"><input type="radio" name="q6" value="d"> d) PASC</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>7. Transmissão fecal-oral significa:</strong></p>
+            <label class="alternativa"><input type="radio" name="q7" value="a"> a) Inseto pica e transmite</label>
+            <label class="alternativa"><input type="radio" name="q7" value="b"> b) Contato com pele doente</label>
+            <label class="alternativa"><input type="radio" name="q7" value="c"> c) Água/alimento contaminado por fezes é ingerido</label>
+            <label class="alternativa"><input type="radio" name="q7" value="d"> d) Ar respirado</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>8. O SUS foi criado em qual ano?</strong></p>
+            <label class="alternativa"><input type="radio" name="q8" value="a"> a) 1988</label>
+            <label class="alternativa"><input type="radio" name="q8" value="b"> b) 1990</label>
+            <label class="alternativa"><input type="radio" name="q8" value="c"> c) 2000</label>
+            <label class="alternativa"><input type="radio" name="q8" value="d"> d) 2010</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>9. Quem destrói células infectadas no sistema imune adquirido?</strong></p>
+            <label class="alternativa"><input type="radio" name="q9" value="a"> a) Linfócito T</label>
+            <label class="alternativa"><input type="radio" name="q9" value="b"> b) Linfócito B</label>
+            <label class="alternativa"><input type="radio" name="q9" value="c"> c) Anticorpo</label>
+            <label class="alternativa"><input type="radio" name="q9" value="d"> d) ETA</label>
+        </div>
+
+        <div class="questao">
+            <p><strong>10. Qual prática NÃO previne doenças por falta de saneamento?</strong></p>
+            <label class="alternativa"><input type="radio" name="q10" value="a"> a) Lavar as mãos</label>
+            <label class="alternativa"><input type="radio" name="q10" value="b"> b) Beber água sem tratamento</label>
+            <label class="alternativa"><input type="radio" name="q10" value="c"> c) Cozinhar bem os alimentos</label>
+            <label class="alternativa"><input type="radio" name="q10" value="d"> d) Higienizar frutas</label>
+        </div>
+
+        <h3 style="margin-top: 30px;">Parte 2 — Resposta Escrita</h3>
+
+        <div class="questao">
+            <p><strong>11. Explique a diferença entre resposta imune inata e adquirida.</strong></p>
+            <textarea class="resposta-escrita" id="r11" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>12. O que são anticorpos e qual a sua função?</strong></p>
+            <textarea class="resposta-escrita" id="r12" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>13. Cite três formas de prevenção da malária.</strong></p>
+            <textarea class="resposta-escrita" id="r13" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>14. Explique a transmissão fecal-oral e dê um exemplo de doença.</strong></p>
+            <textarea class="resposta-escrita" id="r14" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>15. O que significa ETA e qual a sua função?</strong></p>
+            <textarea class="resposta-escrita" id="r15" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>16. O que significa ETE e qual a sua importância?</strong></p>
+            <textarea class="resposta-escrita" id="r16" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>17. Quais são os princípios do SUS?</strong></p>
+            <textarea class="resposta-escrita" id="r17" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>18. O que fazem os Agentes Comunitários de Saúde?</strong></p>
+            <textarea class="resposta-escrita" id="r18" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>19. Cite três doenças evitadas por vacina.</strong></p>
+            <textarea class="resposta-escrita" id="r19" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <div class="questao">
+            <p><strong>20. Qual a relação entre saneamento e saúde?</strong></p>
+            <textarea class="resposta-escrita" id="r20" placeholder="Escreva aqui..."></textarea>
+        </div>
+
+        <button type="button" class="enviar" onclick="corrigir()">✅ Finalizar e Ver Resultado</button>
+    </form>
+
+    <div id="resultado" class="resultado">
+        <h3>📊 Resultado</h3>
+        <p id="notaFinal" style="font-size: 1.3rem; margin: 15px 0;"></p>
+        <div id="detalhes"></div>
+    </div>
+</div>
+
+</div>
+
+<script>
+// FUNÇÃO QUE FAZ OS BOTÕES FUNCIONAREM
+function abrir(id) {
+    document.querySelectorAll('.pagina').forEach(p => p.classList.remove('ativa'));
+    document.getElementById(id).classList.add('ativa');
+    window.scrollTo(0, 0);
+}
+
+// GABARITO
+const gabarito = {
+    q1: 'b', q2: 'c', q3: 'a', q4: 'b', q5: 'b',
+    q6: 'b', q7: 'c', q8: 'b', q9: 'a', q10: 'b'
+};
+
+const respostasEsperadas = {
+    r11: 'Inata: nascemos com ela, age rápido, pele/lágrima/macrófagos. Adquirida: desenvolvemos com o tempo, linfócitos T/B, anticorpos, tem memória.',
+    r12: 'Proteínas do linfócito B que se ligam aos antígenos marcando-os para serem destruídos.',
+    r13: 'Mosquiteiro, repelente, eliminar água parada, roupas compridas, atendimento médico.',
+    r14: 'Fezes contaminam água/alimento ingerido. Ex: diar
